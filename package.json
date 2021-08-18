@@ -1,0 +1,31 @@
+{
+  "name": "oss-publish",
+  "version": "1.0.0",
+  "description": "publish static resources to oss",
+  "bin": {
+    "oss-publish": "./bin/index.js"
+  },
+  "main": "lib/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mankeheaven/oss-publish.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mankeheaven/oss-publish/issues"
+  },
+  "homepage": "https://github.com/mankeheaven/oss-publish#readme",
+  "dependencies": {
+    "ali-oss": "^6.16.0",
+    "commander": "^8.1.0",
+    "fs-extra": "^10.0.0",
+    "progress": "^2.0.3",
+    "untildify": "^4.0.0",
+    "yaml": "^1.10.2"
+  }
+}
