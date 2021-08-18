@@ -1,5 +1,5 @@
 {
-  "name": "oss-publish",
+  "name": "@mankeheaven/oss-publish",
   "version": "1.0.0",
   "description": "publish static resources to oss",
   "bin": {
