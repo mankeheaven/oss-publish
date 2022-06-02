@@ -1,6 +1,6 @@
 {
   "name": "@mankeheaven/oss-publish",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "publish static resources to oss",
   "bin": {
     "oss-publish": "./bin/index.js"
@@ -23,6 +23,7 @@
   "dependencies": {
     "ali-oss": "^6.16.0",
     "commander": "^8.1.0",
+    "file-type": "^17.1.2",
     "fs-extra": "^10.0.0",
     "progress": "^2.0.3",
     "untildify": "^4.0.0",
