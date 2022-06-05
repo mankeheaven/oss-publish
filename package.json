@@ -1,6 +1,6 @@
 {
   "name": "@mankeheaven/oss-publish",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "publish static resources to oss",
   "bin": {
     "oss-publish": "./bin/index.js"
