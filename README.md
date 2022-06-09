@@ -48,7 +48,8 @@ ossPublish({
   "bucket": "your bucket name",
   "region": "your region", //例如：oss-cn-shanghai
   "baseDir": "build", //你要发布的目录，dist or build or other...
-  "defaultWebsiteEntry": "index.html" //如果有html，默认首页入口
+  "defaultWebsiteEntry": "index.html", //如果有html，默认首页入口
+  "supportSubDir": true
 })
 
 ```
