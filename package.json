@@ -1,6 +1,6 @@
 {
   "name": "@mankeheaven/oss-publish",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "publish static resources to oss",
   "bin": {
     "oss-publish": "./bin/index.js"
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/mankeheaven/oss-publish#readme",
   "dependencies": {
     "ali-oss": "^6.16.0",
+    "aws-sdk": "^2.1307.0",
     "commander": "^8.1.0",
     "file-type": "^17.1.2",
     "fs-extra": "^10.0.0",

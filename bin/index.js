@@ -10,16 +10,20 @@ const program = new Command();
 
 // 只支持json配置文件
 // 处理参数 oss-publish --config=filePath(没有就找oss-publish.json)
-// access_key_id，access_key_secret先从process.env上拿，拿不到从 ~/.fcli/config.yaml拿
+// access_key_id，access_key_secret先从process.env上拿，拿不到从 ~/.fcli/config.yaml拿,如果type非ali, config.yaml前面加"s3-"等type
 // 其余的从 oss-publish.json中拿，bucket参数
 
 //命令行 oss-publish
-function getAk() {
+function getAk(type) {
   let akId = process.env.access_key_id;
   let akSecret = process.env.access_key_secret;
 
   if (!akId || !akSecret) {
-    const credentialsFile = untildify("~/.fcli/config.yaml");
+    let u = "~/.fcli/config.yaml"
+    if(type && type!=='ali'){
+      u = `~/.fcli/${type}-config.yaml`
+    }
+    const credentialsFile = untildify(u);
     if (!fs.existsSync(credentialsFile)) {
       console.error(
         "\x1b[31m",
@@ -56,7 +60,7 @@ function parseCredentials(file) {
 }
 
 function getOssOptions() {
-  //region, accessKeyId, accessKeySecret, bucket
+  ///region/endpoint, accessKeyId, accessKeySecret, bucket
   program.option("-c, --config", "config file path");
 
   program.parse(process.argv);
@@ -95,8 +99,8 @@ function checkConfigJson(configJson) {
     configJson.type = "ali";
   }
 
-  if (!configJson.region) {
-    console.error("\x1b[31m", "can not find region params", "\x1b[m");
+  if (!configJson.region&&!configJson.endpoint) {
+    console.error("\x1b[31m", "can not find region or endpoint params", "\x1b[m");
     process.exit(1);
   }
 
@@ -118,8 +122,8 @@ function checkConfigJson(configJson) {
 }
 
 function getAllOptions() {
-  const { akId, akSecret } = getAk();
   const configJson = getOssOptions();
+  const { akId, akSecret } = getAk(configJson.type);
 
   return {
     ...configJson,
