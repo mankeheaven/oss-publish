@@ -23,7 +23,7 @@
   "dependencies": {
     "ali-oss": "^6.16.0",
     "aws-sdk": "^2.1307.0",
-    "commander": "^8.1.0",
+    "commander": "^10.0.1",
     "file-type": "^17.1.2",
     "fs-extra": "^10.0.0",
     "progress": "^2.0.3",

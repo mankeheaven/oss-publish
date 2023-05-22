@@ -61,7 +61,7 @@ function parseCredentials(file) {
 
 function getOssOptions() {
   ///region/endpoint, accessKeyId, accessKeySecret, bucket
-  program.option("-c, --config", "config file path");
+  program.option("-c, --config <char>");
 
   program.parse(process.argv);
 
