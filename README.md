@@ -57,6 +57,8 @@ ossPublish({
   "defaultWebsiteEntry": "index.html", //如果有html，默认首页入口
   "errorWebsiteEntry": "404.html", //可以用来自定义404页面，默认是error.html
   "supportSubDir": true, //子目录首页, type为s3时候，不支持
+  "poolLimit": 50, // 上传池最大限制
+  "poolTimeout: 10000 //上传超时
 })
 
 ```
